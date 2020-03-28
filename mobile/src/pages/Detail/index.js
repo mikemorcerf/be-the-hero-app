@@ -3,6 +3,7 @@ import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 import * as MailComposer from 'expo-mail-composer';
+import * as WebBrowser from 'expo-web-browser';
 
 import styles from './styles';
 import logoImg from '../../assets/logo.png';
@@ -27,8 +28,9 @@ export default function Detail() {
 
     }
 
-    function accessWebsite() {
-
+    async function accessWebsite() {
+        let result = await WebBrowser.openBrowserAsync('https://google.com');
+        this.setState({ result });
     }
 
     return (
@@ -88,7 +90,7 @@ export default function Detail() {
                         </Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.action} onPress={() => {}}>
+                    <TouchableOpacity style={styles.action} onPress={accessWebsite}>
                         <Text style={styles.actionText}>
                             Website
                         </Text>
