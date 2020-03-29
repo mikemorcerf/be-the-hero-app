@@ -1,7 +1,7 @@
 import React from 'react';
 import { Feather } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
-import { View, Image, Text, TouchableOpacity } from 'react-native';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import { View, Image, Text, TouchableOpacity, Linking } from 'react-native';
 import * as MailComposer from 'expo-mail-composer';
 import * as WebBrowser from 'expo-web-browser';
 
@@ -10,7 +10,10 @@ import logoImg from '../../assets/logo.png';
 
 export default function Detail() {
     const navigation = useNavigation();
-    const message = 'Hello ORG, I\'m reaching out because I\'d like to help out with the incident "Cadelinha ran over" with the amount of $120.00.';
+    const route = useRoute();
+    const incident = route.params.incident;
+
+    const message = `Hello ${incident.name}, I'm reaching out because I'd like to help out with the incident "${incident.title}" with the amount of ${Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(incident.value)}.`;
 
     function navigateBack(){
         navigation.goBack();
@@ -18,19 +21,25 @@ export default function Detail() {
 
     function sendEmail() {
         MailComposer.composeAsync({
-            subject: 'Hero for incident: Cadelinha ran over',
-            recipients: ['mikemorcerf@aol.com'],
+            subject: `Hero for incident: ${incident.title}`,
+            recipients: [incident.email],
             body: message,
         });
     }
 
     function callPhone() {
-
+        let phoneNumber = '';
+        if (Platform.OS === 'android') {
+          phoneNumber = `tel:\$\{${incident.phone}}`;
+        }
+        else {
+          phoneNumber = `telprompt:\$\{${incident.phone}}`;
+        }
+        Linking.openURL(phoneNumber);
     }
 
     async function accessWebsite() {
-        let result = await WebBrowser.openBrowserAsync('https://google.com');
-        this.setState({ result });
+        await WebBrowser.openBrowserAsync('https://'+incident.website);
     }
 
     return (
@@ -44,24 +53,34 @@ export default function Detail() {
 
             <View style={styles.incident}>
                 <Text style={[styles.incidentProperty, { marginTop: 0} ]}>
-                    ORG:
+                    Organization:
                 </Text>
                 <Text style={styles.incidentValue}>
-                    ORGNAME
+                    {incident.name} located in {incident.city}, {incident.state}.
                 </Text>
 
                 <Text style={styles.incidentProperty}>
                     Incident:
                 </Text>
                 <Text style={styles.incidentValue}>
-                    Cadelinha ran over.
+                    {incident.title}.
+                </Text>
+
+                <Text style={styles.incidentProperty}>
+                    Description:
+                </Text>
+                <Text style={styles.incidentValue}>
+                    {incident.description}.
                 </Text>
 
                 <Text style={styles.incidentProperty}>
                     Cost:
                 </Text>
                 <Text style={styles.incidentValue}>
-                    $120.00
+                    {Intl.NumberFormat('en-US', {
+                        style: 'currency',
+                        currency: 'USD'
+                    }).format(incident.value)}
                 </Text>
             </View>
 
@@ -78,7 +97,7 @@ export default function Detail() {
                 </Text>
 
                 <View style={styles.actions}>
-                    <TouchableOpacity style={styles.action} onPress={() => {}}>
+                    <TouchableOpacity style={styles.action} onPress={callPhone}>
                         <Text style={styles.actionText}>
                             Call
                         </Text>
