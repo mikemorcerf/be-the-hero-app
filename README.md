@@ -18,7 +18,7 @@
 
 * [Technologies](#wrench-technologies)
 * [Features](#rocket-features)
-* [Installation](#construction_worker-installation-&-getting-started)
+* [Installation & Getting started](#construction_worker-installation-and-getting-started)
 * [Found a bug? Missing a specific feature?](#bug-issues)
 * [Acknowledgment](#clap-acknowledgment)
 * [License](#closed_book-license)
@@ -46,7 +46,7 @@
 * Organizations can post incidents they need help with
 * Users can find incidents organizations need help with and connect with the organizations to learn how to help them
 
-# :construction_worker: Installation & Getting Started
+# :construction_worker: Installation and Getting Started
 
 ```bash
 # Clone this repository
