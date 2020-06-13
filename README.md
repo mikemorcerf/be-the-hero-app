@@ -18,7 +18,7 @@
 
 * [Technologies](#wrench-technologies)
 * [Features](#rocket-features)
-* [Installation & Getting started](#construction_worker-installation-and-getting-started)
+* [Installation and Getting started](#construction_worker-installation-and-getting-started)
 * [Found a bug? Missing a specific feature?](#bug-issues)
 * [Acknowledgment](#clap-acknowledgment)
 * [License](#closed_book-license)
