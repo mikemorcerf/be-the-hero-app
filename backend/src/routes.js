@@ -14,7 +14,6 @@ routes.post('/sessions',celebrate({
     })
 }) , SessionController.create);
 
-
 routes.get('/orgs', OrgController.index);
 
 routes.post('/orgs', celebrate({

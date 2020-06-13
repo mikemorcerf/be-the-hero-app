@@ -1,4 +1,5 @@
-// Update with your config settings.
+require('reflect-metadata');
+require('dotenv').config();
 
 module.exports = {
 
@@ -25,35 +26,30 @@ module.exports = {
   },
 
   staging: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
+    client: 'pg',
+    connection: process.env.DATABASE_URL,
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      directory: './src/database/migrations/'
+    },
+    ssl: true
   },
 
   production: {
     client: 'postgresql',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+        host: process.env.DATABASE_HOST,
+        database: process.env.DATABASE_NAME,
+        user: process.env.DATABASE_USER,
+        password: process.env.DATABASE_PASSWORD,
+        charset: 'utf8'
     },
     pool: {
-      min: 2,
-      max: 10
+        min: 2,
+        max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      directory: './src/database/migrations/'
+    },
   }
 
 };
