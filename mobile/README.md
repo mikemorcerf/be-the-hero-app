@@ -19,6 +19,7 @@
 * [Technologies](#wrench-technologies)
 * [Features](#rocket-features)
 * [Installation and Getting started](#construction_worker-installation-and-getting-started)
+* [How to Use](#feet-how-to-use)
 * [Found a bug? Missing a specific feature?](#bug-issues)
 * [Acknowledgment](#clap-acknowledgment)
 * [License](#closed_book-license)
@@ -100,6 +101,36 @@ $ react-native run-ios
 # Use the command below for Android devices
 $ react-native run-android
 ```
+# :feet: How to Use
+
+[Working Online Demo](https://frontend-bethehero.netlify.app/)
+</br>
+Organizations must sign up using the web version of Be The Hero application.
+<p align="center">
+   <img alt="be the hero instructions" src="https://res.cloudinary.com/mikemoura/image/upload/v1592081220/be-the-hero/instructions/be-the-hero_instructions_1_nijsfd.png"/>
+</p>
+After filling up the sign up form and clicking "Register", an unique ID will be generated.
+</br>
+This ID must be stored in secret so just the Organization that created the profile can post incidents.
+<p align="center">
+   <img alt="be the hero instructions picture" src="https://res.cloudinary.com/mikemoura/image/upload/v1592081220/be-the-hero/instructions/be-the-hero_instructions_2_firo4x.png"/>
+</p>
+The Organization must use the ID that was generated to access their Dashboard.
+<p align="center">
+   <img alt="be the hero instructions picture" src="https://res.cloudinary.com/mikemoura/image/upload/v1592081220/be-the-hero/instructions/be-the-hero_instructions_3_lwsgdv.png"/>
+</p>
+In the Dashboard, Organizations can see all incidents they have posted and can create new incidents.
+<p align="center">
+   <img alt="be the hero instructions picture" src="https://res.cloudinary.com/mikemoura/image/upload/v1592081220/be-the-hero/instructions/be-the-hero_instructions_4_qwbzya.png"/>
+</p>
+To create a new incident, the Organization must fill in the incident form and click "Register".
+<p align="center">
+   <img alt="be the hero instructions picture" src="https://res.cloudinary.com/mikemoura/image/upload/v1592081220/be-the-hero/instructions/be-the-hero_instructions_5_okbjvl.png"/>
+</p>
+Users can access all of Organizations' incidents and contact information through their mobile application.
+<p align="center">
+   <img alt="be the hero instructions gif" src="https://res.cloudinary.com/mikemoura/image/upload/v1592082107/be-the-hero/mobile/be-the-hero_mobile_5mb_nrwpeb.gif"/>
+</p>
 
 # :bug: Issues
 
