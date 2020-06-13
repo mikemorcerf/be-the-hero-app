@@ -103,7 +103,7 @@ $ react-native run-android
 
 # :bug: Issues
 
-Feel free to **file a new issue** with a respective title and description on the [Github Explorer](https://github.com/mikemorcerf/be-the-hero-app/issues) repository. If you already found a solution to your problem, **I would love to review your pull request**!
+Feel free to **file a new issue** with a respective title and description on the [Be The Hero](https://github.com/mikemorcerf/be-the-hero-app/issues) repository. If you already found a solution to your problem, **I would love to review your pull request**!
 
 # :clap: Acknowledgment
 
