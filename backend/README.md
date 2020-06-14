@@ -129,7 +129,7 @@ To create a new incident, the Organization must fill in the incident form and cl
 </p>
 Users can access all of Organizations' incidents and contact information through their mobile application.
 <p align="center">
-   <img alt="be the hero instructions gif" src="https://res.cloudinary.com/mikemoura/image/upload/v1592082107/be-the-hero/mobile/be-the-hero_mobile_5mb_nrwpeb.gif"/>
+   <img alt="be the hero instructions gif" src="https://res.cloudinary.com/mikemoura/image/upload/v1592141041/be-the-hero/mobile/be-the-hero-mobile_gx6nth.gif"/>
 </p>
 
 # :bug: Issues
